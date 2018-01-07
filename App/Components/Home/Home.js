@@ -14,12 +14,17 @@ import styles from './styles';
 import { observer } from 'mobx-react/native'
 
 @observer
-export default class App extends Component {
+export default class Home extends Component {
+    static navigationOptions = ({ navigation, screenProps }) => ({
+        header: null,
+        gesturesEnabled: false
+    });
+
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
-                    Welcome to React Native!11
+                    Home
                 </Text>
             </View>
         );

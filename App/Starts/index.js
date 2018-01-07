@@ -7,12 +7,28 @@ class MobxData {
         isLogin: false
     };
 
+    @observable
+    App = {
+        showSplash: true,
+        modalVisible: false
+    }
+
     @action
     setUserState(obj) {
         for (const key in obj) {
             if (obj.hasOwnProperty(key)) {
                 const element = obj[key];
-                User[key] = element;
+                this.User[key] = element;
+            }
+        }
+    }
+
+    @action
+    setApptate(obj) {
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                const element = obj[key];
+                this.App[key] = element;
             }
         }
     }
